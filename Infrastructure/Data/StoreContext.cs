@@ -17,6 +17,7 @@ namespace Infrastructure.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            // hack for fixing  decimal issue in sqlite
             if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
             {
                 foreach(var entityType in modelBuilder.Model.GetEntityTypes())

@@ -74,7 +74,9 @@ namespace API
 
             services.AddApplicationServices();
             //  services.AddIdentityServices();
+           // services.AddEndpointsApiExplorer();
             services.AddSwaggerDocumentation();
+            services.AddSwaggerGen();
             services.AddCors(opt =>
             {
                 opt.AddPolicy("CorsPolicy", policy =>
